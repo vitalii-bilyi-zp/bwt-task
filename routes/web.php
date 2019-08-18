@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('reviews')->group(function () {
+    Route::get('/', 'ReviewController@index');
+    Route::post('/', 'ReviewController@store');
+    Route::get('form', 'ReviewController@getForm');
+});
