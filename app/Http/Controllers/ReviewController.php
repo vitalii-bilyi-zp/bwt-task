@@ -5,17 +5,24 @@ namespace App\Http\Controllers;
 // use Illuminate\Http\Request;
 use App\Review;
 use App\Http\Requests\StoreReview;
+use App\Repositories\ReviewRepository;
 
 class ReviewController extends Controller
 {
-    public function __construct()
+    protected $reviews;
+
+    public function __construct(ReviewRepository $reviews)
     {
         $this->middleware('auth', ['except' => ['store', 'getForm']]);
+
+        $this->reviews = $reviews;
     }
 
     public function index()
     {
-        return 'Reviews index';
+        $reviews = $this->reviews->getList();
+        
+        return view('reviews.index', compact('reviews'));
     }
 
     public function store(StoreReview $request)
