@@ -57,7 +57,7 @@
                             <label for="birth-date" class="col-md-4 col-form-label text-md-right">{{ __('Birth Date') }}</label>
 
                             <div class="col-md-6">
-                                <input id="birth-date" type="text" class="form-control @error('birth_date') is-invalid @enderror" name="birth_date" value="{{ old('birth_date') }}">
+                                <input id="birth-date" type="date" class="form-control @error('birth_date') is-invalid @enderror" name="birth_date" value="{{ old('birth_date') }}">
 
                                 @error('birth_date')
                                     <span class="invalid-feedback" role="alert">
