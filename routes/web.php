@@ -19,8 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/weather', 'WeatherController@index')->name('weather');
+
 Route::prefix('reviews')->group(function () {
     Route::get('/', 'ReviewController@index');
     Route::post('/', 'ReviewController@store');
     Route::get('form', 'ReviewController@getForm');
 });
+
+
