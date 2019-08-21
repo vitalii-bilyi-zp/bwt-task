@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            	<div class="card-header">{{ __('Reviews list') }}</div>
+            	<h2 class="card-header text-center">{{ __('Reviews list') }}</h2>
 
                 <div class="card-body">
                 	<table class="table table-striped">
@@ -17,7 +17,6 @@
 					        </tr>
 					    </thead>
 					    <tbody>
-
 					    	@if (count($reviews) > 0)
 					    		@foreach ($reviews as $review)
 					    			<tr>
@@ -31,7 +30,6 @@
 						            <td colspan="3">Reviews not found</td>
 						        </tr>
 					    	@endif
-
 					    </tbody>
 					</table>
                 </div>

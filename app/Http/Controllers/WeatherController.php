@@ -19,8 +19,8 @@ class WeatherController extends Controller
     public function index()
     {
     	$url = 'https://www.gismeteo.ua/weather-zaporizhia-5093/';
-        $data = $this->weather->getWeatherData($url);
+        $weather = $this->weather->getWeatherData($url);
         
-        return view('weather.index', ['data' => $data]);
+        return view('weather.index', compact('weather'));
     }
 }

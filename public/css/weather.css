@@ -1,0 +1,28 @@
+.temperature-wrapper {
+	font-size: 1.2rem;
+}
+.temperature-wrapper p {
+	margin-bottom: 0;
+}
+
+.temperature_f {
+	display: none;
+}
+
+.temperature-wrapper.unit_f .temperature_f {
+	display: block;
+}
+
+.temperature-wrapper.unit_f .temperature_c {
+	display: none;
+}
+
+.values {
+	display: flex;
+	justify-content: center;
+}
+
+.unit {
+	font-size: 1.8rem;
+	cursor: pointer;
+}
