@@ -5,15 +5,15 @@
 	<div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            	<h2 class="card-header text-center">{{ __('Reviews list') }}</h2>
+            	<h2 class="card-header text-center">Список отзывов</h2>
 
                 <div class="card-body">
                 	<table class="table table-striped">
 					    <thead>
 					        <tr>
-					            <th scope="col">{{ __('Date') }}</th>
-					            <th scope="col">{{ __('Name') }}</th>
-					            <th scope="col">{{ __('Message') }}</th>
+					            <th scope="col">Дата</th>
+					            <th scope="col">Автор</th>
+					            <th scope="col">Сообщение</th>
 					        </tr>
 					    </thead>
 					    <tbody>
@@ -27,7 +27,7 @@
 					    		@endforeach
 					    	@else
 								<tr>
-						            <td colspan="3">Reviews not found</td>
+						            <td colspan="3">На данный момент нет ни одного отзыва. <a class="btn btn-link p-0" href="{{ url('reviews/form') }}">Оставить свой.</a></td>
 						        </tr>
 					    	@endif
 					    </tbody>

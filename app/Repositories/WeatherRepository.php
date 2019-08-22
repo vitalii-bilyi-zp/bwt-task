@@ -8,7 +8,12 @@ use \phpQuery;
 
 class WeatherRepository
 {	
-	
+	/**
+   * Parsing of weather data received by $url, and its subsequent storage in array.
+   *
+   * @param string $url
+   * @return array
+   */
   	public function getWeatherData($url)
   	{
     	$parser = new Parser();

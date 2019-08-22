@@ -1,21 +1,20 @@
 <?php 
 
 namespace App\Parser;
-/**
- * Class Parser
- * @package Parser
- */
+
 class Parser
 {   
     /**
      * @var cURL resource
      */
     private $ch;
-    /**
-     * @var DOMDocument
-     */
-    private $dom;
 
+    /**
+     * Initializes a cURL session.
+     *
+     * @param  bool $print
+     * @return void
+     */
     public function __construct($print = false)
     {
         $this->ch = curl_init();
@@ -25,6 +24,13 @@ class Parser
         }
     }
 
+    /**
+     * Sets the parameter for cURL session.
+     *
+     * @param  int  $opt
+     * @param  mixed  $value
+     * @return Parser
+     */
     public function setOpt($opt, $value)
     {
         curl_setopt($this->ch, $opt, $value);
@@ -32,6 +38,12 @@ class Parser
         return $this;
     }
 
+    /**
+     * Binds the $url parameter to the current cURL session and executes the request.
+     *
+     * @param  string  $url
+     * @return Response
+     */
     public function exec($url)
     {
         $this->setOpt(CURLOPT_URL, $url);
@@ -39,6 +51,11 @@ class Parser
         return curl_exec($this->ch);
     }
 
+    /**
+     * Ends a cURL session and free resources.
+     *
+     * @return void
+     */
     public function __destruct()
     {
         curl_close($this->ch);
